@@ -1,0 +1,25 @@
+extends layout
+
+block content
+    h1(style='color: red') Edit 
+        span(style='color:grey') #{movie.name} 
+
+    
+    form(method='POST',action='/movie/single/edit/'+ movie.id)
+        lable Director: 
+        input(name='director',type='text')
+        br
+        br
+        lable Description:  
+        textarea(name="description", cols="30", rows="5")
+        br
+        br
+        lable Rating: 
+        input(name='rating', type='number',step='.01')
+        br
+        br
+        lable Genres: 
+        textarea(name="genres", cols="30", rows="2")
+        br
+        br
+        input(type='submit',value='Modify')

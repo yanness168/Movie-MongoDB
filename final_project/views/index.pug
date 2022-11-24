@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  if user 
+    h3 Welcome back #{user.name}
+  h1(style='color: darkgreen') Movie World
+  each movie in movies
+    lable(style='font-size:18px')
+      b Name: 
+    a(href="/movie/single/"+movie.id) #{movie.name}
+    h4 Directed By #{movie.director}
+    P
+      b Released Year: 
+        | #{movie.year}
+    p(style="line-height: 2")
+      b Description: 
+      | #{movie.description}
+    p 
+      b Rating: 
+      | #{movie.rating}
+    p 
+      b Genres: 
+    ul 
+    each genre in movie.genres
+      if !genre.isEmpty
+        li #{genre}
+        br
+    hr
+    
+
+

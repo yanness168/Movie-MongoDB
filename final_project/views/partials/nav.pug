@@ -1,0 +1,15 @@
+nav
+    a(href='/') Home
+    br
+    br
+
+    if user
+        a(href='/movie/add') Add Movie
+        br
+        br
+        a(href="/user/logout") Logout
+    else
+        a(href='/user/register') Register
+        br
+        br
+        a(href='/user/login') Login

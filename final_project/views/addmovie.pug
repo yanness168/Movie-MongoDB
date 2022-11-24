@@ -1,0 +1,36 @@
+extends layout
+
+block content 
+    h1 Add movie 
+
+    if errors 
+        each error in errors 
+            p(style='color: red') #{error.msg}
+
+    //"#" -- id; "." -- class
+    form(method="POST",action="/movie/add")
+       lable Name: 
+       input(name='name', type='text')
+       br
+       br
+       lable Director: 
+       input(name='director', type='text')
+       br
+       br
+       lable Released Year: 
+       input(name='year', type='number')
+       br
+       br
+       lable Description: 
+       textarea(name="description", cols="30", rows="5")
+       br
+       br
+       lable Genres: 
+       textarea(name="genres", cols="30", rows="2")
+       br
+       br
+       lable Rating: 
+       input(name='rating', type='text')
+       br
+       br
+       input(type="submit",value="submit")

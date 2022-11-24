@@ -1,0 +1,27 @@
+extends layout
+
+block content 
+    h1(style='color: darkgreen') Register Account 
+    
+    if errors 
+        each error in errors 
+            p(style='color: red') #{error.msg}
+    
+    form(method='POST',action='/user/register')
+        lable Name:  
+        input(name='name', type='text')
+        br
+        br
+        lable Email:  
+        input(name="email", type="email")
+        br
+        br
+        lable Password: 
+        input(name='password', type='text')
+        br
+        br
+        lable Confirm Password: 
+        input(name="confirm_password", type='text')
+        br
+        br
+        input(type="submit", name="submit", value="Register For Me!")

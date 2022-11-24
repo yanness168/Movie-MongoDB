@@ -1,0 +1,19 @@
+extends layout
+
+block content 
+    h1(style='color: darkgreen') Login To Your Account 
+    
+    if errors 
+        each error in errors 
+            p(style='color: red') #{error.msg}
+    
+    form(method='POST',action='/user/login')
+        lable Email:  
+        input(name="email", type="text")
+        br
+        br
+        lable Password: 
+        input(name='password', type='password')
+        br
+        br
+        input(type="submit", value="Login")

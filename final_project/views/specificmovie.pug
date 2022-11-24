@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    h1(style='color: darkgreen') #{movie.name} 
+    div -- Posted By 
+      i #{posted_by}
+    h4 Directed By #{movie.director}
+    P
+      b Released Year: 
+      | #{movie.year}
+    p
+      b Description: 
+      | #{movie.description}
+    p 
+      b Rating: 
+      | #{movie.rating}
+    p 
+      b Genres: 
+    ul 
+    each genre in movie.genres
+      if !genre.isEmpty
+        li #{genre}
+        br
+    hr
+    if user
+      if user.id == movie.posted_by 
+          a.btn.btn-default(href='/movie/single/edit/'+ movie._id) Edit Movie
+          br
+          br
+          button.btn.delete-movie(href='#', data-id=movie._id, type='button') Delete Movie
+          p(style='color: red')
