@@ -3,6 +3,8 @@ extends layout
 block content
   if user 
     h3 Welcome back #{user.name}
+  else 
+    h3(style='color: red') Please Log in :>
   h1(style='color: darkgreen') Movie World
   each movie in movies
     lable(style='font-size:18px')
